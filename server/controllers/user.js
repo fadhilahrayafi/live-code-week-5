@@ -1,6 +1,7 @@
 const User = require('../models').User
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const axios = require('axios')
 
 class UserController {
 
@@ -39,6 +40,13 @@ class UserController {
       next(err)
     })
   }
+
+  // static apirandom(req, res, next) {
+  //   axios({
+  //     method: "GET",
+
+  //   })
+  // }
 
 }
 
