@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Comic Agung</title>
+    <script src="jquery-3.4.1.min.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -16,8 +17,8 @@
   <body>
     <div class="container" id="app">
       <!-- Logout button and notification for success / error event -->
-      <div class="row my-3">
-        <button id="btn-logout" class="btn btn-primary ml-auto">Logout</button>
+      <div class="row my-3" id="logoutbutton">
+        <div id="btn-logout" class="btn btn-primary ml-auto" onclick="logout()">Logout</div>
       </div>
 
       <div id="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -25,7 +26,8 @@
       </div>
 
       <!-- This is Login Form  -->
-      <div>
+      <div id="loginPage">
+        <div id="pagelog">
         <h1>Login</h1>
         <form class="my-4">
           <div class="form-group">
@@ -34,7 +36,7 @@
               type="email"
               class="form-control"
               name="email"
-              id="email"
+              id="emailLogin"
               required
             />
           </div>
@@ -44,19 +46,22 @@
               type="password"
               class="form-control"
               name="password"
-              id="password"
+              id="passwordLogin"
               required
             />
           </div>
-          <button type="submit" class="btn btn-primary">
+          <div class="btn btn-primary" onclick="login()">
             Submit
-          </button>
-          <button type="submit" class="btn btn-info">
+          </div>
+          <div type="submit" class="btn btn-info" onclick="toRegis()">
             Register
-          </button>
+          </div>
         </form>
       </div>
+    </div>
 
+
+    <div id="regispage">
       <div>
         <h1>Register</h1>
         <form class="my-4">
@@ -96,50 +101,30 @@
           <button type="submit" class="btn btn-warning">
             Random User
           </button>
-          <button type="submit" class="btn btn-info">
+          <button type="submit" class="btn btn-info" onclick="toLogin()">
             Login
           </button>
         </form>
+      </div>
       <ist -->
-      <div>
+
+
+      <div id="mainPage">
         <h1>Comic Collection</h1>
         <div class="row my-4">
           <!-- Each of comic will have one of this card -->
-          <div class="col-4 mb-4">
-            <div class="card text-center">
-              <img
-                src="https://www.idwpublishing.com/wp-content/uploads/2018/10/aHR0cDovL3d3dy5uZXdzYXJhbWEuY29tL2ltYWdlcy9pLzAwMC8yNDAvNzQ0L29yaWdpbmFsL1NwaWRlcm1hbjAxX2N2ckEuanBn.jpeg"
-                class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">The Amazing Spiderman - new Avengers</h5>
-                <p class="card-text">Author: J Michael S</p>
-                <button class="btn btn-primary">Edit</button>
-              </div>
-            </div>
+          <div class="col-4 mb-4" id="tempatComic">
+           
           </div>
         </div>
 
       <!-- This is form page to update a comic -->
-      <div>
-        <h1>Update Comic</h1>
-        <form class="my-4">
-          <div class="form-group">
-            <label for="title">Title</label>
-            <input id="title" type="text" class="form-control" name="title" />
-          </div>
-          <div class="form-group">
-            <label for="author">Author</label>
-            <input type="text" class="form-control" name="author" />
-          </div>
-          <div class="form-group">
-            <label for="imageUrl">Comic Image URL</label>
-            <input type="text" class="form-control" name="imageUrl" />
-          </div>
-          <button id="btn-update" type="submit" class="btn btn-primary">
-            Submit
-          </button>
-        </form>
-      </di>
+      <div id="editTemplate">
+      
     </div>
   </body>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script> -->
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
+ 
+  <script src="app.js"></script>
 </html>
